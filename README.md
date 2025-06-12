@@ -35,11 +35,11 @@ A simple Lifesteal plugin constantly being updated
 
 | Node | Default |
 |------|---------|
-| `lifesteal.admin` | `op` |
-| `lifesteal.reload` | `op` |
+| `lifesteal.admin` | `OP` |
+| `lifesteal.reload` | `OP` |
 | `lifesteal.withdraw` | `true` |
 | `lifesteal.revive` | `true` |
-| `lifesteal.bypasslimit` | `op` |
+| `lifesteal.bypasslimit` | `OP` |
 
 ---
 
@@ -54,7 +54,7 @@ A simple Lifesteal plugin constantly being updated
 ## ✅ Supported Versions
 
 - Minecraft 1.21+  
-- Compatible with Bukkit, Spigot, Paper, Purpur, Folia
+- Compatible with Bukkit, Spigot, Paper, Purpur
 
 ---
 
