@@ -13,7 +13,7 @@ A simple Lifesteal plugin constantly being updated
 - 🌐 Multi-language support (easy to translate)
 - 💾 MySQL & SQLite support for player data persistence
 - 🔄 Live config and language reload (`/reloadlifesteal`)
-- ✅ Bukkit-safe, Paper-safe, Purpur-safe & Folia-compatible
+- ✅ Bukkit-safe, Paper-safe, Purpur-safe, and Bukkit-safe
 
 ---
 
