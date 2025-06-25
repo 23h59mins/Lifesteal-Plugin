@@ -1,0 +1,43 @@
+name: LifestealSMP
+version: '1.0.0'
+main: sphere.plugin.lifestealSMP.LifestealSMP
+api-version: '1.21'
+author: MidnightZone
+description: Lifesteal SMP plugin with full heart system, MySQL/SQLite, bans, revive system, configurable crafting, multi-language & complete admin control.
+
+commands:
+  withdrawheart:
+    description: Withdraw 1 heart and receive heart item.
+    usage: /withdrawheart
+    permission: lifesteal.withdraw
+
+  reloadlifesteal:
+    description: Reload plugin configuration and language files.
+    usage: /reloadlifesteal
+    permission: lifesteal.reload
+
+  lifestealadmin:
+    description: Admin commands for LifestealSMP.
+    usage: /lifestealadmin <set|add|remove|giveheart|revivebeacon|unban|purgebans|setmax|resetall|banlist|reload>
+    permission: lifesteal.admin
+
+permissions:
+  lifesteal.admin:
+    description: Allows access to all admin commands.
+    default: op
+
+  lifesteal.bypasslimit:
+    description: Allows players to exceed maximum hearts limit.
+    default: op
+
+  lifesteal.withdraw:
+    description: Allows players to withdraw hearts into heart item.
+    default: true
+
+  lifesteal.reload:
+    description: Allows reloading plugin configurations.
+    default: op
+
+  lifesteal.revive:
+    description: Allows players to use revive beacon to revive banned players.
+    default: true
