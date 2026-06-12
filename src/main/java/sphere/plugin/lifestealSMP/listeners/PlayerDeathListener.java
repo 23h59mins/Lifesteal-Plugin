@@ -1,0 +1,64 @@
+package sphere.plugin.lifestealSMP.listeners;
+
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
+import sphere.plugin.lifestealSMP.LifestealSMP;
+import sphere.plugin.lifestealSMP.managers.BanManager;
+import sphere.plugin.lifestealSMP.managers.HeartManager;
+import sphere.plugin.lifestealSMP.utils.MessageUtils;
+
+import java.sql.SQLException;
+
+public class PlayerDeathListener implements Listener {
+
+    private final LifestealSMP plugin;
+    private final HeartManager heartManager;
+    private final BanManager banManager;
+
+    public PlayerDeathListener(LifestealSMP plugin) {
+        this.plugin = plugin;
+        this.heartManager = plugin.getHeartManager();
+        this.banManager = plugin.getBanManager();
+    }
+
+    @EventHandler
+    public void onPlayerDeath(PlayerDeathEvent event) {
+        Player victim = event.getEntity();
+
+        Player killer = victim.getKiller();
+        boolean isPvP = killer != null && !killer.getUniqueId().equals(victim.getUniqueId());
+
+        try {
+            if (isPvP) {
+                handlePvPDeath(victim, killer);
+                return;
+            }
+
+            if (plugin.getConfigManager().isDeathPenaltyEnabled()) {
+                handleNonPvPDeath(victim);
+            }
+        } catch (SQLException e) {
+            plugin.getLogger().severe("[PlayerDeathListener] SQL error processing death for " + victim.getName() + ": " + e.getMessage());
+        } catch (Exception e) {
+            plugin.getLogger().severe("[PlayerDeathListener] Unexpected error processing death for " + victim.getName() + ": " + e.getMessage());
+        }
+    }
+
+    private void handlePvPDeath(Player victim, Player killer) throws SQLException {
+        heartManager.addHearts(killer, 1);
+        heartManager.removeHearts(victim, 1);
+        banManager.checkBan(victim);
+
+        MessageUtils.sendWithPrefix(killer, plugin, "&aYou gained +1 heart for killing " + victim.getName() + ".");
+        MessageUtils.sendWithPrefix(victim, plugin, "&cYou lost 1 heart for being killed by " + killer.getName() + ".");
+    }
+
+    private void handleNonPvPDeath(Player victim) throws SQLException {
+        heartManager.removeHearts(victim, 1);
+        banManager.checkBan(victim);
+
+        MessageUtils.sendWithPrefix(victim, plugin, "&cYou lost 1 heart.");
+    }
+}
