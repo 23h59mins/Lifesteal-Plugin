@@ -136,3 +136,7 @@ LifestealSMP delivers a full Lifesteal SMP experience while remaining fully scal
 ---
 
 Made with ❤️ by **MidnightZone**
+
+---
+
+![Have fun](https://cdn.modrinth.com/data/cached_images/9afac1f9e643f803b665f9bb60a3676467bc2ef6_0.webp)
