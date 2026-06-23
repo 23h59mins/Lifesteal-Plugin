@@ -1,7 +1,17 @@
+![Banner](https://cdn.modrinth.com/data/cached_images/a085a30e30b7cabfe823ba7574443623770568af_0.webp)
+
+---
+
 # LifestealSMP 🔪❤️
 
 LifestealSMP is a highly configurable and fully featured Lifesteal plugin designed for modern Minecraft SMP servers.  
 It offers a complete hearts-based survival system, revive mechanics, advanced crafting, multi-language support, and full administrative control.
+
+---
+
+[![Discord invitation](https://cdn.modrinth.com/data/cached_images/987780219d2e4f8a4466f8e3d8493ec27a6c0c84_0.webp)](https://discord.gg/BbqeDSN9)
+[![Github Invitation](https://cdn.modrinth.com/data/cached_images/d56dbb421a54bcc2f7913d7237b4eb197e476a27_0.webp)](https://github.com/23h59mins/Lifesteal-Plugin)
+![Operation in Minecraft 1.21+](https://cdn.modrinth.com/data/cached_images/59fec7211986e2f899526a091bca2dd304bbbfaa_0.webp)
 
 ---
 
@@ -92,6 +102,10 @@ These placeholders allow server owners and developers to deeply customize their 
 ---
 
 ## 🚀 Supported Platforms
+
+---
+
+![Available for multi platforms](https://cdn.modrinth.com/data/cached_images/7b056939c687312c139b8a9efbd8a51a98b11d1e_0.webp)
 
 ---
 
